@@ -1,14 +1,14 @@
 # TODO Напишите функцию для поиска индекса товара
 def get_item_index(items, item):
-    for i in range(len(items)):
-        if items[i] == item:
-            return i + 1 #Прибавляем 1, чтобы индекс начинался не с 0, а с 1
+    for index, value in enumerate(items):
+        if value == item:
+            return index
     return None
 
 items_list = ['яблоко', 'банан', 'апельсин', 'груша', 'киви', 'банан']
 
 for find_item in ['банан', 'груша', 'персик']:
-    index_item = get_item_index(items_list, find_item)  # TODO Вызовите функцию, что получить индекс товара
+    index_item = get_item_index(items_list, find_item)
     if index_item is not None:
         print(f"Первое вхождение товара '{find_item}' имеет индекс {index_item}.")
     else:
